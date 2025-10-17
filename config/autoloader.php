@@ -21,3 +21,6 @@ spl_autoload_register(function ($class) {
         }
     }
 });
+
+// Chargement de la classe Database
+require_once ROOT . DS . 'src' . DS . 'services' . DS . 'Database.php';

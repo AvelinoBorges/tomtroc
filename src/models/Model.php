@@ -21,22 +21,15 @@ abstract class Model
     protected static function getPdo(): PDO
     {
         if (self::$pdo === null) {
-            // Configuration de la base de données (à adapter selon vos besoins)
-            $host = 'localhost';
-            $dbname = 'tomtroc';
-            $username = 'root';
-            $password = '';
+            // Chargement de la configuration
+            $config = require_once ROOT . DS . 'config' . DS . 'database.php';
             
             try {
                 self::$pdo = new PDO(
-                    "mysql:host={$host};dbname={$dbname};charset=utf8mb4",
-                    $username,
-                    $password,
-                    [
-                        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                        PDO::ATTR_EMULATE_PREPARES => false,
-                    ]
+                    "mysql:host={$config['host']};dbname={$config['dbname']};charset={$config['charset']}",
+                    $config['username'],
+                    $config['password'],
+                    $config['options']
                 );
             } catch (PDOException $e) {
                 throw new Exception("Erreur de connexion à la base de données : " . $e->getMessage());
@@ -44,5 +37,21 @@ abstract class Model
         }
         
         return self::$pdo;
+    }
+    
+    /**
+     * Exécute une requête SQL
+     * 
+     * @param string $sql Requête SQL
+     * @param array $params Paramètres de la requête
+     * @return PDOStatement
+     */
+    protected static function query(string $sql, array $params = []): PDOStatement
+    {
+        $pdo = self::getPdo();
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute($params);
+        
+        return $stmt;
     }
 }
