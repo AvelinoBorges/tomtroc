@@ -1,2 +1,12 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Definir linguagens para o GitHub
+*.php linguist-language=PHP
+*.css linguist-language=CSS
+*.js linguist-language=JavaScript
+*.sql linguist-language=SQL
+
+# Excluir arquivos de vendor e bibliotecas da estatística
+public/vendor/* linguist-vendored
+node_modules/* linguist-vendored
