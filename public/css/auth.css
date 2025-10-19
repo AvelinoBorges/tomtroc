@@ -1,0 +1,308 @@
+/* =========================
+   PAGE AUTHENTIFICATION (CONNEXION/INSCRIPTION)
+   ========================= */
+
+/* Remove espaçamento do wrapper para a página auth */
+body:has(.auth-page) .wrapper {
+    max-width: 100%;
+}
+
+.auth-page {
+    width: 100%;
+    background-color: var(--color-background-light);
+    min-height: calc(100vh - 80px - 61px);
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.auth-page-container {
+    max-width: 1440px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+/* Colonne gauche - Formulaire */
+.auth-form-column {
+    background-color: var(--color-background-light);
+    padding: 130px 0 0 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-title {
+    font-family: var(--font-secondary);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.333;
+    color: var(--color-noir);
+    margin: 0 0 56px 0;
+}
+
+/* Alertes */
+.alert {
+    padding: 16px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.alert-error {
+    background-color: #ffe6e6;
+    border: 1px solid #ff4d4d;
+    color: #cc0000;
+}
+
+.alert-success {
+    background-color: #e6f7ed;
+    border: 1px solid #00a859;
+    color: #006837;
+}
+
+/* Formulaire */
+.auth-form {
+    width: 322px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+/* Login page - 2 campos */
+.form-group:first-child {
+    margin-bottom: 32px;
+}
+
+/* Register page - 4 campos */
+body:has([action*="processRegister"]) .form-group:first-child {
+    margin-bottom: 32px;
+}
+
+body:has([action*="processRegister"]) .form-group:nth-child(2) {
+    margin-bottom: 32px;
+}
+
+body:has([action*="processRegister"]) .form-group:nth-child(3) {
+    margin-bottom: 32px;
+}
+
+.form-label {
+    display: block;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-gris-texte);
+    margin-bottom: 13px;
+}
+
+.form-input {
+    width: 100%;
+    height: 50px;
+    padding: 0 16px;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-gris-fonce);
+    background-color: var(--color-blanc);
+    border: 1px solid #F0F0F0;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-input::placeholder {
+    color: var(--color-gris-texte);
+}
+
+.form-input:focus {
+    border-color: var(--color-vert-principal);
+}
+
+/* Bouton de soumission */
+.auth-submit-btn {
+    width: 322px;
+    padding: 22px 38px;
+    background-color: var(--color-vert-principal);
+    color: var(--color-blanc);
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.21;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 32px;
+    margin-bottom: 40px;
+}
+
+.auth-submit-btn:hover {
+    background-color: #009458;
+    transform: translateY(-2px);
+}
+
+.auth-submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Texte du pied de page */
+.auth-footer-text {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-gris-fonce);
+    margin: 0;
+}
+
+.auth-link {
+    color: var(--color-gris-fonce);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.auth-link:hover {
+    color: var(--color-vert-principal);
+}
+
+/* Colonne droite - Image */
+.auth-image-column {
+    width: 100%;
+    max-width: 720px;
+    height: 886px;
+    background-color: var(--color-gris-clair);
+    overflow: hidden;
+    margin-top: 0;
+    display: block;
+}
+
+.auth-image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.auth-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* =========================
+   RESPONSIVE - TABLET
+   ========================= */
+@media (max-width: 1024px) {
+    .auth-page-container {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-form-column {
+        padding: 80px 50px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .auth-image-column {
+        width: 100%;
+        max-width: 100%;
+        height: 500px;
+        margin-top: 40px;
+    }
+
+    .auth-form {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .auth-submit-btn {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* =========================
+   RESPONSIVE - MOBILE (100% Figma)
+   ========================= */
+@media (max-width: 768px) {
+    .auth-form-column {
+        padding: 78px 20px 0 20px;
+        max-width: 100%;
+    }
+
+    .auth-title {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 32px;
+    }
+
+    .auth-form {
+        width: 100%;
+        max-width: 335px;
+    }
+
+    .form-group {
+        margin-bottom: 0;
+    }
+
+    .form-group:first-child {
+        margin-bottom: 32px;
+    }
+
+    .form-label {
+        margin-bottom: 13px;
+        font-size: 14px;
+    }
+
+    .form-input {
+        width: 100%;
+        height: 50px;
+        font-size: 14px;
+    }
+
+    .auth-submit-btn {
+        width: 100%;
+        max-width: 335px;
+        padding: 22px 38px;
+        font-size: 16px;
+        margin-top: 32px;
+        margin-bottom: 29px;
+    }
+
+    .auth-footer-text {
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 24px;
+    }
+
+    .auth-image-column {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 462px;
+        margin-top: 0;
+    }
+
+    .auth-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+

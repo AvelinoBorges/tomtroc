@@ -1,0 +1,435 @@
+/* =========================
+   PAGE NOS LIVRES
+   ========================= */
+
+/* Section Header avec titre et recherche */
+.books-header {
+    width: 100%;
+    background-color: var(--color-gris-clair);
+    padding: 130px 0 50px;
+}
+
+.books-header__container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 70px 0 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.books-header__title {
+    font-family: var(--font-secondary);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.333;
+    color: var(--color-noir);
+    margin: 0;
+}
+
+/* Barre de recherche */
+.search-bar {
+    position: relative;
+    width: 322px;
+    height: 50px;
+}
+
+.search-bar__input {
+    width: 100%;
+    height: 100%;
+    padding: 0 50px 0 40px;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-gris-fonce);
+    background-color: var(--color-blanc);
+    border: 1px solid #F0F0F0;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar__input::placeholder {
+    color: var(--color-gris-texte);
+}
+
+.search-bar__input:focus {
+    border-color: var(--color-vert-principal);
+}
+
+/* Botão do ícone de pesquisa */
+.search-bar__icon-button {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: opacity 0.3s ease;
+}
+
+.search-bar__icon-button:hover {
+    opacity: 0.7;
+}
+
+.search-bar__icon-button:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.search-bar__icon {
+    width: 15.85px;
+    height: 15.15px;
+    pointer-events: none;
+}
+
+/* Botão de limpar pesquisa */
+.search-bar__clear {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: opacity 0.3s ease;
+}
+
+.search-bar__clear:hover {
+    opacity: 0.6;
+}
+
+.search-bar__clear svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Section grille de livres */
+.books-grid-section {
+    width: 100%;
+    background-color: var(--color-background-light);
+    padding: 80px 0 120px;
+}
+
+.books-grid {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 150px;
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    gap: 48px 38px;
+    justify-content: space-between;
+}
+
+/* Cards de livres (réutilisation du style home.css avec ajustements) */
+.book-card {
+    position: relative;
+    width: 200px;
+    height: 324px;
+    background-color: var(--color-blanc);
+    border-radius: 0;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.01);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.08);
+}
+
+.book-card__image {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.book-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-card__content {
+    height: 124px;
+    padding: 20px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.book-card__title {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-noir);
+    margin: 0;
+}
+
+.book-card__author {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-gris-texte);
+    margin: 0;
+}
+
+.book-card__seller {
+    font-family: var(--font-primary);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-gris-texte);
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-top: auto;
+}
+
+.book-card__username {
+    font-weight: 400;
+    margin-left: -7px;
+}
+
+/* Badge "non dispo." */
+.book-card__badge {
+    position: absolute;
+    top: 16px;
+    right: 16.5px;
+    padding: 3.7px 13.31px;
+    background-color: #C56D6D;
+    border-radius: 29.58px;
+    font-family: var(--font-primary);
+    font-size: 8.875px;
+    font-weight: 500;
+    line-height: 1.21;
+    color: var(--color-blanc);
+    text-align: center;
+    z-index: 2;
+}
+
+.book-card--unavailable {
+    opacity: 0.7;
+}
+
+/* =========================
+   RESPONSIVE - TABLET
+   ========================= */
+@media (max-width: 1200px) {
+    .books-header__container {
+        padding: 0 50px;
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(3, 200px);
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .books-header {
+        padding: 100px 0 40px;
+    }
+
+    .books-header__container {
+        padding: 0 30px;
+    }
+
+    .books-header__title {
+        font-size: 32px;
+    }
+
+    .search-bar {
+        width: 280px;
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(3, 200px);
+        gap: 36px 24px;
+        padding: 0 30px;
+        justify-content: center;
+    }
+}
+
+/* =========================
+   RESPONSIVE - TABLET PEQUENO (≤768px)
+   ========================= */
+@media (max-width: 768px) {
+    .books-header {
+        padding: 80px 0 40px;
+    }
+
+    .books-header__container {
+        padding: 0 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .books-header__title {
+        font-size: 28px;
+    }
+
+    .search-bar {
+        width: 100%;
+        max-width: 335px;
+    }
+
+    .books-grid-section {
+        padding: 50px 0 80px;
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(3, 200px);
+        gap: 32px 20px;
+        padding: 0 30px;
+        justify-content: center;
+    }
+}
+
+/* =========================
+   RESPONSIVE - MOBILE (≤480px)
+   ========================= */
+@media (max-width: 480px) {
+    .books-header {
+        padding: 56px 0 29px;
+    }
+
+    .books-header__container {
+        padding: 0 20px;
+        gap: 28px;
+    }
+
+    .books-header__title {
+        font-size: 30px;
+        line-height: 1.333;
+        width: 286px;
+    }
+
+    .search-bar {
+        width: 335px;
+        height: 50px;
+    }
+
+    .search-bar__input {
+        padding: 0 40px;
+        font-size: 14px;
+    }
+
+    .search-bar__icon {
+        left: 12px;
+    }
+
+    .books-grid-section {
+        padding: 45px 0 80px;
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(2, 160px);
+        gap: 15px 15px;
+        padding: 0 20px;
+        justify-content: space-between;
+    }
+
+    .book-card {
+        width: 160px;
+        height: 259.2px;
+    }
+
+    .book-card__image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .book-card__content {
+        height: 99.2px;
+        padding: 16px 11.2px;
+        gap: 8px;
+    }
+
+    .book-card__title {
+        font-size: 13px;
+        line-height: 1.21;
+    }
+
+    .book-card__author {
+        font-size: 11px;
+        line-height: 1.21;
+    }
+
+    .book-card__seller {
+        font-size: 8px;
+        line-height: 1.21;
+    }
+
+    .book-card__badge {
+        top: 13.1px;
+        right: 13.1px;
+        padding: 2.96px 10.65px;
+        border-radius: 23.67px;
+        font-size: 7.1px;
+        font-weight: 500;
+    }
+}
+
+/* =========================
+   MENSAGEM SEM LIVROS
+   ========================= */
+.no-books-message {
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.no-books-message p {
+    font-family: var(--font-primary);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-gris-fonce);
+    margin: 0 0 24px 0;
+}
+
+.btn-reset-search {
+    display: inline-block;
+    padding: 16px 32px;
+    background-color: var(--color-vert-principal);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-reset-search:hover {
+    background-color: #009458;
+    transform: translateY(-2px);
+}
+
+.btn-reset-search:active {
+    transform: translateY(0);
+}

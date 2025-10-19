@@ -1,0 +1,125 @@
+/**
+ * Styles pour le footer
+ */
+
+.footer {
+    width: 100%;
+    height: 61px;
+    background-color: var(--color-blanc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.footer__container {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 40px;
+    padding: 0 15px;
+    position: relative;
+}
+
+/* Liens du footer */
+.footer__links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer__link {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.21;
+    color: var(--color-gris-fonce);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+    color: var(--color-vert-principal);
+}
+
+/* Copyright */
+.footer__copyright {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.21;
+    color: var(--color-gris-fonce);
+}
+
+/* Icône réseaux sociaux */
+.footer__social {
+    width: 22px;
+    height: 17.36px;
+}
+
+.footer__social img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 768px) {
+    .footer {
+        height: auto;
+        padding: 20px 0;
+    }
+    
+    .footer__container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .footer__links {
+        gap: 20px;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+    .footer {
+        height: auto;
+        padding: 30px 0;
+    }
+    
+    .footer__container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 0 24px;
+    }
+    
+    .footer__links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        order: 1;
+    }
+    
+    .footer__link {
+        font-size: 12px;
+        text-align: center;
+    }
+    
+    .footer__copyright {
+        order: 3;
+        text-align: center;
+        font-size: 12px;
+    }
+    
+    .footer__social {
+        order: 2;
+        width: 22px;
+        height: 17.36px;
+    }
+}

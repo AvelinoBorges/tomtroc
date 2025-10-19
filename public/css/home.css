@@ -1,0 +1,687 @@
+/**
+ * Styles pour la page d'accueil
+ */
+
+/* Reset de la page */
+.home {
+    width: 100%;
+    background-color: var(--color-gris-clair);
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* =========================
+   SECTION HERO
+   ========================= */
+.hero {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    height: 827px;
+    background-color: var(--color-gris-clair);
+    overflow: hidden;
+    margin: 0 auto;
+    padding-top: 0;
+}
+
+.hero__content {
+    position: absolute;
+    left: 290px;
+    top: 318px;
+    z-index: 2;
+    max-width: 329px;
+}
+
+.hero__title {
+    font-family: var(--font-secondary);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.333;
+    color: var(--color-noir);
+    margin: 0 0 16px 0;
+    max-width: 329px;
+}
+
+.hero__description {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.21;
+    color: var(--color-noir);
+    margin: 0 0 40px 0;
+    max-width: 328px;
+}
+
+.hero__image {
+    position: absolute;
+    right: 310px;
+    top: 160px;
+    width: 404px;
+    height: 539px;
+    z-index: 1;
+}
+
+.hero__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================
+   BOUTONS
+   ========================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 38px;
+    border-radius: 10px;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.21;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    max-width: 218px;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.btn--primary {
+    background-color: var(--color-vert-principal);
+    color: var(--color-blanc);
+}
+
+.btn--primary:hover {
+    background-color: #009557;
+    color: var(--color-blanc);
+}
+
+.btn--outline {
+    background-color: var(--color-gris-clair);
+    color: var(--color-vert-principal);
+    border: 1px solid var(--color-vert-principal);
+}
+
+.btn--outline:hover {
+    background-color: var(--color-vert-principal);
+    color: var(--color-blanc);
+}
+
+.btn--center {
+    margin: 0 auto;
+    display: flex;
+}
+
+/* Bouton hero avec dimensions spécifiques */
+.btn--hero {
+    width: 152px;
+    height: 63px;
+    max-width: 152px;
+    padding: 0;
+}
+
+/* =========================
+   SECTION DERNIERS LIVRES
+   ========================= */
+.latest-books {
+    width: 100%;
+    background-color: var(--color-background-light);
+    padding: 80px 0;
+}
+
+.section-title {
+    font-family: var(--font-secondary);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.333;
+    color: var(--color-gris-fonce);
+    text-align: center;
+    margin: 0 0 73px 0;
+}
+
+.books-grid {
+    max-width: 1140px;
+    margin: 0 auto 48px;
+    padding: 0 150px;
+    display: flex;
+    justify-content: center;
+    gap: 38px;
+}
+
+/* =========================
+   CARD LIVRE
+   ========================= */
+.book-card {
+    width: 200px;
+    height: 324px;
+    background-color: var(--color-blanc);
+    border-radius: 0;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.01);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.08);
+}
+
+.book-card__image {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    flex-shrink: 0;
+}
+
+.book-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-no-image-home {
+    width: 100%;
+    height: 100%;
+    background: #D3D3D3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.book-no-image-home span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #666666;
+    padding: 10px;
+}
+
+.book-card__content {
+    padding: 20px 14px 14px;
+    height: 124px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.book-card__title {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-noir);
+    margin: 0 0 8px 0;
+}
+
+.book-card__author {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-gris-texte);
+    margin: 0 0 20px 0;
+}
+
+.book-card__seller {
+    display: flex;
+    gap: 4px;
+    font-family: var(--font-primary);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-gris-texte);
+}
+
+.book-card__username {
+    font-weight: 400;
+}
+
+/* =========================
+   SECTION COMMENT ÇA MARCHE
+   ========================= */
+.how-it-works {
+    width: 100%;
+    background-color: var(--color-background-light);
+    padding: 80px 0;
+}
+
+.how-it-works__intro {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.21;
+    color: var(--color-gris-fonce);
+    text-align: center;
+    max-width: 397px;
+    margin: 0 auto 38px;
+}
+
+.steps-grid {
+    max-width: 1140px;
+    margin: 0 auto 48px;
+    padding: 0 150px;
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+}
+
+.step-card {
+    width: 215px;
+    min-width: 215px;
+    max-width: 215px;
+    height: 139px;
+    min-height: 139px;
+    max-height: 139px;
+    background-color: var(--color-blanc);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.step-card p {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-gris-fonce);
+    text-align: center;
+    margin: 0;
+}
+
+/* =========================
+   SECTION BANNER DECORATIVE
+   ========================= */
+.banner-decoration {
+    width: 100%;
+    height: 230px;
+    background-color: var(--color-gris-clair);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.banner-decoration img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================
+   SECTION NOS VALEURS
+   ========================= */
+.our-values {
+    width: 100%;
+    background-color: var(--color-gris-clair);
+    padding: 80px 0 0px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.our-values__content {
+    max-width: 392px;
+    text-align: left;
+}
+
+.section-title {
+    text-align: center;
+}
+
+.our-values__decoration {
+    width: 120px;
+    height: 102px;
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin: 40px auto 0;
+    top: -90px;
+    left: 150px;
+}
+
+.our-values__decoration img {
+    width: 100%;
+    height: 100%;
+}
+
+.our-values__text {
+    margin: 30px 0 40px;
+}
+
+.our-values__text p {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.21;
+    color: var(--color-gris-fonce);
+    margin: 0 0 16px 0;
+}
+
+.our-values__text p:last-child {
+    margin-bottom: 0;
+}
+
+.our-values__signature {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-gris-texte);
+    margin: 0;
+}
+
+/* =========================
+   RESPONSIVE - TABLET
+   ========================= */
+@media (max-width: 1200px) {
+    .hero__content {
+        left: 100px;
+    }
+
+    .hero__image {
+        right: 100px;
+    }
+
+    .books-grid {
+        padding: 0 50px;
+        flex-wrap: wrap;
+    }
+
+    .steps-grid {
+        padding: 0 50px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        height: auto;
+        min-height: 600px;
+    }
+
+    .hero__content {
+        left: 50px;
+        top: 200px;
+    }
+
+    .hero__image {
+        width: 300px;
+        height: 400px;
+        right: 50px;
+        top: 100px;
+    }
+
+    .books-grid {
+        padding: 0 50px;
+    }
+
+    .steps-grid {
+        padding: 0 50px;
+    }
+}
+
+/* =========================
+   RESPONSIVE - MOBILE (375px - Figma Design)
+   ========================= */
+@media (max-width: 768px) {
+    .home {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    /* Hero Section Mobile */
+    .hero {
+        height: auto;
+        max-width: 100%;
+        min-height: auto;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero__image {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100%;
+        height: 503px;
+        max-width: 100%;
+        margin: 0;
+        order: -1;
+    }
+
+    .hero__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero__content {
+        position: relative;
+        left: auto;
+        top: auto;
+        padding: 42px 20px 32px;
+        max-width: 100%;
+    }
+
+    .hero__title {
+        font-size: 30px;
+        line-height: 1.333;
+        margin-bottom: 16px;
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .hero__description {
+        font-size: 16px;
+        line-height: 1.21;
+        margin-bottom: 32px;
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .btn--hero {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        padding: 22px 38px;
+    }
+
+    /* Latest Books Section Mobile */
+    .latest-books {
+        padding: 48px 20px 32px;
+        background-color: var(--color-background-light);
+    }
+
+    .section-title {
+        font-size: 28px;
+        line-height: 1.333;
+        margin-bottom: 34px;
+        text-align: center;
+    }
+
+    .books-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 160px);
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+        margin-bottom: 32px;
+    }
+
+    .book-card {
+        width: 160px;
+        height: 259.2px;
+    }
+
+    .book-card__image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .book-card__image img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .book-no-image-home {
+        width: 160px;
+        height: 160px;
+    }
+
+    .book-no-image-home span {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .book-card__content {
+        height: 99.2px;
+        padding: 16px 11.2px;
+        gap: 8px;
+    }
+
+    .book-card__title {
+        font-size: 13px;
+        line-height: 1.21;
+    }
+
+    .book-card__author {
+        font-size: 11px;
+        line-height: 1.21;
+    }
+
+    .book-card__seller {
+        font-size: 8px;
+        line-height: 1.21;
+        gap: 0;
+    }
+
+    .btn--center {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 22px 38px;
+    }
+
+    /* How it Works Section Mobile */
+    .how-it-works {
+        padding: 48px 20px;
+        background-color: var(--color-background-light);
+    }
+
+    .how-it-works__intro {
+        font-size: 14px;
+        line-height: 1.21;
+        max-width: 335px;
+        margin: 0 auto 32px;
+    }
+
+    .steps-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 335px;
+        margin: 0 auto 32px;
+        padding: 0;
+    }
+
+    .step-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: auto;
+        height: 139px;
+        min-height: 139px;
+        max-height: 139px;
+        padding: 20px;
+    }
+
+    .step-card p {
+        font-size: 14px;
+        line-height: 1.21;
+    }
+
+    /* Banner Decoration Mobile */
+    .banner-decoration {
+        height: 425px;
+        overflow: hidden;
+    }
+
+    .banner-decoration img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Our Values Section Mobile */
+    .our-values {
+        padding: 48px 20px 80px;
+        background-color: var(--color-blanc);
+    }
+
+    .our-values__content {
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .our-values__content .section-title {
+        font-size: 28px;
+        line-height: 1.333;
+        margin-bottom: 24px;
+        text-align: left;
+    }
+
+    .our-values__text {
+        margin-bottom: 28px;
+    }
+
+    .our-values__text p {
+        font-size: 14px;
+        line-height: 1.21;
+        margin-bottom: 16px;
+    }
+
+    .our-values__signature {
+        font-size: 12px;
+        line-height: 1.21;
+        margin-bottom: 77px;
+    }
+
+    .our-values__decoration {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: 120px;
+        height: 102px;
+        margin: 0 auto;
+        z-index: 1;
+    }
+
+    .our-values__decoration img {
+        width: 100%;
+        height: 100%;
+    }
+}

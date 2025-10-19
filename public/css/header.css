@@ -1,0 +1,327 @@
+/**
+ * Styles pour le header (Menu)
+ */
+
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: var(--color-gris-clair);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.header__container {
+    width: 100%;
+    max-width: 1140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo */
+.header__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header__logo img {
+    width: 155px;
+    height: 51px;
+}
+
+/* Navigation principale */
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+    margin-left: 78px;
+}
+
+.header__nav-link {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    line-height: 1.21;
+    letter-spacing: 0.02em;
+    color: var(--color-gris-fonce);
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.header__nav-link:hover {
+    color: #000000;
+    font-weight: 700;
+}
+
+.header__nav-link--active {
+    font-weight: 600;
+}
+
+/* Section droite */
+.header__right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Séparateur vertical */
+.header__separator {
+    width: 1px;
+    height: 19px;
+    background-color: var(--color-gris-texte);
+    opacity: 0.2;
+}
+
+/* Messagerie avec badge */
+.header__messagerie {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    position: relative;
+}
+
+.header__messagerie-icon {
+    width: 15px;
+    height: 13.13px;
+    flex-shrink: 0;
+}
+
+.header__messagerie-text {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.21;
+    letter-spacing: 0.02em;
+    color: var(--color-gris-fonce);
+    transition: all 0.3s ease;
+}
+
+.header__messagerie:hover .header__messagerie-text {
+    color: #000000;
+    font-weight: 700;
+}
+
+.header__messagerie-badge {
+    min-width: 10.5px;
+    height: 15px;
+    background-color: var(--color-gris-fonce);
+    border-radius: 6.75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.25px 3px;
+    
+}
+
+.header__messagerie-badge-text {
+    font-family: var(--font-primary);
+    font-size: 8.25px;
+    font-weight: 700;
+    line-height: 1.21;
+    color: var(--color-gris-clair);
+}
+
+/* Mon compte */
+.header__compte {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.header__compte-icon {
+    width: 9.29px;
+    height: 13px;
+    flex-shrink: 0;
+}
+
+.header__compte-text {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.21;
+    letter-spacing: 0.02em;
+    color: var(--color-gris-fonce);
+    transition: all 0.3s ease;
+}
+
+.header__compte:hover .header__compte-text {
+    color: #000000;
+    font-weight: 700;
+}
+
+/* Connexion */
+.header__connexion {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.21;
+    letter-spacing: 0.02em;
+    color: var(--color-gris-fonce);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.header__connexion:hover {
+    color: #000000;
+    font-weight: 700;
+}
+
+/* Menu mobile toggle - Hamburger animado */
+.header__menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-gris-fonce);
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.header__menu-toggle.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.header__menu-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.header__menu-toggle.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Menu mobile */
+.header__mobile-menu {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-blanc);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+.header__mobile-menu.active {
+    transform: translateX(0);
+}
+
+.header__mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+    align-items: center;
+}
+
+.header__mobile-link {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-gris-fonce);
+    text-decoration: none;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.header__mobile-link:hover {
+    color: #000000;
+    font-weight: 700;
+}
+
+.header__mobile-link--login,
+.header__mobile-link--logout {
+    font-weight: 600;
+    color: var(--color-vert-principal);
+    margin-top: 8px;
+}
+
+.header__mobile-badge {
+    min-width: 20px;
+    height: 20px;
+    background-color: var(--color-gris-fonce);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-blanc);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .header__container {
+        max-width: 100%;
+        padding: 0 40px;
+    }
+    
+    .header__nav {
+        gap: 20px;
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 56px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    .header__container {
+        padding: 0 20px;
+    }
+    
+    .header__logo img {
+        width: 78px;
+        height: 25.66px;
+    }
+    
+    .header__nav {
+        display: none;
+    }
+    
+    .header__right {
+        display: none;
+    }
+    
+    .header__menu-toggle {
+        display: flex;
+    }
+}

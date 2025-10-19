@@ -1,0 +1,207 @@
+/**
+ * Importation des polices Google Fonts
+ * Police principale: Inter (poids: 300, 400, 600, 700)
+ * Police secondaire: Playfair Display (poids: 400, 600)
+ */
+
+/* Inter - Regular 300 (Light) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* Playfair Display - Regular 400 et Semi-bold 600 */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+
+/**
+ * Variables CSS pour les polices
+ */
+:root {
+    /* Polices */
+    --font-primary: 'Inter', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+    
+    /* Couleurs */
+    --color-vert-principal: #00AC66;
+    --color-gris-clair: #F5F3EF;
+    --color-gris-texte: #A6A6A6;
+    --color-gris-fonce: #292929;
+    --color-background-light: #FAF9F7;
+    --color-blanc: #FFFFFF;
+    --color-noir: #000000;
+    
+    /* Tailles de police */
+    --font-size-xs: 10px;
+    --font-size-sm: 12px;
+    --font-size-base: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 20px;
+    --font-size-xl: 32px;
+    --font-size-xxl: 36px;
+    
+    /* Poids de police */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Hauteur de ligne */
+    --line-height-tight: 1.21;
+    --line-height-normal: 1.33;
+    
+    /* Espacements */
+    --spacing-xs: 8px;
+    --spacing-sm: 10px;
+    --spacing-md: 16px;
+    --spacing-lg: 22px;
+    --spacing-xl: 38px;
+    
+    /* Border radius */
+    --radius-sm: 6.75px;
+    --radius-md: 8.5px;
+    --radius-lg: 10px;
+    
+    /* Ombres */
+    --shadow-card: 0px 4px 24px 0px rgba(0, 0, 0, 0.01);
+}
+
+/**
+ * Reset de base et styles globaux
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+    color: var(--color-gris-fonce);
+    background-color: var(--color-gris-clair);
+}
+
+/**
+ * Classes typographiques
+ */
+
+/* Titres avec Playfair Display */
+h1, .h1 {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+}
+
+h2, .h2 {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+}
+
+h3, .h3 {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-normal);
+}
+
+/* Texte corps avec Inter */
+p, .body-text {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-light);
+    line-height: var(--line-height-tight);
+}
+
+.body-text-small {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+}
+
+.body-text-xs {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+}
+
+.caption {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+}
+
+/* Boutons et liens */
+.btn-text {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+}
+
+.nav-link {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.02em;
+}
+
+.nav-link-active {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    letter-spacing: 0.02em;
+}
+
+/* Notification badge */
+.badge-text {
+    font-family: var(--font-primary);
+    font-size: 8.25px;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+}
+
+/**
+ * Classes utilitaires de couleur
+ */
+.text-vert-principal {
+    color: var(--color-vert-principal);
+}
+
+.text-gris-fonce {
+    color: var(--color-gris-fonce);
+}
+
+.text-gris-texte {
+    color: var(--color-gris-texte);
+}
+
+.text-noir {
+    color: var(--color-noir);
+}
+
+.text-blanc {
+    color: var(--color-blanc);
+}
+
+.bg-vert-principal {
+    background-color: var(--color-vert-principal);
+}
+
+.bg-gris-clair {
+    background-color: var(--color-gris-clair);
+}
+
+.bg-background-light {
+    background-color: var(--color-background-light);
+}
+
+.bg-blanc {
+    background-color: var(--color-blanc);
+}

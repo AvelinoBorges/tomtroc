@@ -1,0 +1,361 @@
+/* =========================
+   PAGE SINGLE LIVRE
+   ========================= */
+
+.book-page {
+    width: 100%;
+    background-color: var(--color-gris-clair);
+    min-height: calc(100vh - 80px - 61px);
+    padding: 16px 0 0;
+}
+
+/* Breadcrumb */
+.book-breadcrumb {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 150px;
+    font-family: var(--font-primary);
+    font-size: 10px;
+    font-weight: 300;
+    line-height: 1.21;
+    color: var(--color-gris-texte);
+    margin-bottom: 28px;
+}
+
+.breadcrumb-link {
+    color: var(--color-gris-texte);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+    color: var(--color-vert-principal);
+}
+
+.breadcrumb-separator {
+    margin: 0 4px;
+}
+
+.breadcrumb-current {
+    color: var(--color-gris-texte);
+}
+
+/* Contenu principal */
+.book-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 0 0 0;
+    display: grid;
+    grid-template-columns: 720px 720px;
+    gap: 0;
+}
+
+/* Colonne gauche - Image */
+.book-image-column {
+    width: 720px;
+    height: 863px;
+    background-color: var(--color-background-light);
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.book-image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.book-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.book-no-image-detail {
+    width: 100%;
+    height: 100%;
+    background: #D3D3D3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.book-no-image-detail span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #666666;
+    padding: 20px;
+}
+
+/* Colonne droite - Informations */
+.book-info-column {
+    background-color: var(--color-background-light);
+    padding: 59px 85px 60px 85px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header du livre */
+.book-header {
+    margin-bottom: 35px;
+}
+
+.book-title {
+    font-family: var(--font-secondary);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.333;
+    color: var(--color-noir);
+    margin: 0 0 16px 0;
+}
+
+.book-author {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-gris-texte);
+    margin: 0;
+}
+
+/* Séparateur */
+.book-separator {
+    width: 27px;
+    height: 1px;
+    background-color: var(--color-gris-texte);
+    margin-bottom: 33px;
+}
+
+/* Section Description */
+.book-description-section {
+    margin-bottom: 58px;
+}
+
+.section-label {
+    font-family: var(--font-primary);
+    font-size: 8px;
+    font-weight: 600;
+    line-height: 1.21;
+    letter-spacing: 0.08em;
+    color: var(--color-gris-fonce);
+    margin: 0 0 26px 0;
+    text-transform: uppercase;
+}
+
+.book-description {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-gris-fonce);
+    margin: 0;
+    white-space: pre-line;
+}
+
+/* Section Propriétaire */
+.book-owner-section {
+    margin-bottom: 76px;
+}
+
+.book-owner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--color-blanc);
+    padding: 6px 17px 6px 6px;
+    border-radius: 114px;
+    width: fit-content;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.book-owner:hover {
+    background-color: #F5F3EF;
+    transform: translateY(-2px);
+}
+
+.owner-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.owner-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.owner-name {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.21;
+    color: var(--color-gris-fonce);
+}
+
+/* Bouton CTA */
+.book-cta {
+    width: 485px;
+    padding: 22px 38px;
+    background-color: var(--color-vert-principal);
+    color: var(--color-blanc);
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.21;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.book-cta:hover {
+    background-color: #009458;
+    color: var(--color-blanc);
+}
+
+.book-cta:active {
+    background-color: #009458;
+}
+
+/* Bouton secondaire pour le propriétaire */
+.book-cta--secondary {
+    background-color: #e8e8e8;
+    color: var(--color-noir);
+}
+
+.book-cta--secondary:hover {
+    background-color: #d0d0d0;
+}
+
+/* Actions du propriétaire */
+.book-owner-actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* =========================
+   RESPONSIVE - TABLET
+   ========================= */
+@media (max-width: 1440px) {
+    .book-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .book-image-column {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 720 / 863;
+    }
+
+    .book-cta {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .book-breadcrumb {
+        padding: 0 50px;
+    }
+
+    .book-content {
+        padding: 0;
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .book-image-column {
+        width: 100%;
+        aspect-ratio: 5 / 6;
+    }
+
+    .book-info-column {
+        padding: 40px 50px;
+    }
+
+    .book-cta {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .book-info-column {
+        padding: 40px;
+    }
+}
+
+/* =========================
+   RESPONSIVE - MOBILE
+   ========================= */
+@media (max-width: 768px) {
+    .book-page {
+        padding: 0;
+    }
+
+    .book-breadcrumb {
+        display: none;
+    }
+
+    .book-content {
+        padding: 0;
+        gap: 0;
+    }
+
+    .book-image-column {
+        aspect-ratio: 4 / 5;
+    }
+
+    .book-no-image-detail span {
+        font-size: 18px;
+        line-height: 22px;
+        padding: 15px;
+    }
+
+    .book-info-column {
+        padding: 32px 20px;
+    }
+
+    .book-title {
+        font-size: 28px;
+    }
+
+    .book-author {
+        font-size: 14px;
+    }
+
+    .book-separator {
+        margin-bottom: 24px;
+    }
+
+    .section-label {
+        margin-bottom: 16px;
+    }
+
+    .book-description-section {
+        margin-bottom: 32px;
+    }
+
+    .book-owner-section {
+        margin-bottom: 32px;
+    }
+
+    .book-cta {
+        width: 100%;
+        padding: 18px 32px;
+        font-size: 14px;
+    }
+}
