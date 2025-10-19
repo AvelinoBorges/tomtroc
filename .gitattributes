@@ -1,0 +1,11 @@
+# Force GitHub to recognize PHP files correctly
+*.php linguist-language=PHP
+
+# Ensure CSS files are properly detected
+*.css linguist-language=CSS
+
+# Documentation
+*.md linguist-documentation
+
+# Exclude public assets from language statistics
+public/* linguist-vendored
