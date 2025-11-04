@@ -1,3 +1,36 @@
+<!--
+/**
+ * Vue d'inscription (Register)
+ * 
+ * Cette page permet aux nouveaux utilisateurs de créer un compte sur TomTroc.
+ * Le formulaire collecte le pseudo, l'email, le mot de passe et sa confirmation,
+ * puis les envoie au AuthController pour validation et création de compte.
+ * 
+ * Variables attendues:
+ * @var string $pageTitle - Titre de la page (généralement "Inscription")
+ * @var string $error (optionnel) - Message d'erreur (ex: email déjà utilisé, mots de passe différents)
+ * @var string $success (optionnel) - Message de succès après inscription réussie
+ * 
+ * Layout:
+ * - Colonne gauche: Formulaire d'inscription (pseudo, email, mot de passe, confirmation)
+ * - Colonne droite: Image décorative de livres
+ * 
+ * Validations:
+ * - Pseudo: Requis
+ * - Email: Format valide requis (validation HTML5)
+ * - Mot de passe: Minimum 6 caractères (validé côté serveur)
+ * - Confirmation: Doit correspondre au mot de passe
+ * 
+ * Sécurité:
+ * - Échappement HTML avec htmlspecialchars() pour prévenir les XSS
+ * - Hachage bcrypt du mot de passe côté serveur (voir User model)
+ * - Validation HTML5 des champs (type email, required)
+ * - Transmission POST des données sensibles
+ * 
+ * @author TomTroc
+ * @version 1.0
+ */
+-->
 <!DOCTYPE html>
 <html lang="fr">
 <head>

@@ -1,3 +1,29 @@
+<!--
+/**
+ * Vue de connexion (Login)
+ * 
+ * Cette page permet aux utilisateurs existants de se connecter à leur compte TomTroc.
+ * Le formulaire collecte l'email et le mot de passe, puis les envoie au AuthController
+ * pour validation et création de session.
+ * 
+ * Variables attendues:
+ * @var string $pageTitle - Titre de la page (généralement "Connexion")
+ * @var string $error (optionnel) - Message d'erreur à afficher en cas d'échec de connexion
+ * @var string $success (optionnel) - Message de succès (ex: après inscription réussie)
+ * 
+ * Layout:
+ * - Colonne gauche: Formulaire de connexion (email, mot de passe)
+ * - Colonne droite: Image décorative de livres
+ * 
+ * Sécurité:
+ * - Échappement HTML avec htmlspecialchars() pour prévenir les XSS
+ * - Validation HTML5 des champs (type email, required)
+ * - Transmission POST des données sensibles
+ * 
+ * @author TomTroc
+ * @version 1.0
+ */
+-->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
